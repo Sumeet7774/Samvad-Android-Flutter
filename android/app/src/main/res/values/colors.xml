@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base Colors -->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+
+    <!-- App Brand Colors -->
+    <color name="primary_bg">#0B1B2B</color> <!-- Deep navy blue -->
+    <color name="accent_teal">#27C1A9</color> <!-- Teal green -->
+    <color name="text_light">#F4F7F8</color> <!-- Soft white for text -->
+    <color name="secondary_bg">#1F3A4D</color> <!-- Lighter navy -->
+    <color name="accent_gold">#FFD166</color> <!-- Warm gold -->
+</resources>
