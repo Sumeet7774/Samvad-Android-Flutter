@@ -30,6 +30,7 @@ class _IndexScreenState extends State<IndexScreen> {
                     style: ElevatedButton.styleFrom(
                       minimumSize: const Size(350, 80),
                       backgroundColor: const Color(0xFF3A80C1),
+                      side: BorderSide(color: Colors.black, width: 1.5),
                     ),
                     child: const Text(
                       "LOGIN",
@@ -42,14 +43,14 @@ class _IndexScreenState extends State<IndexScreen> {
                     ),
                   ),
                   const SizedBox(height: 20),
-                  OutlinedButton(
+                  ElevatedButton(
                     onPressed: () {
                       // Navigate to Signup Screen
                     },
-                    style: OutlinedButton.styleFrom(
+                    style: ElevatedButton.styleFrom(
                       minimumSize: const Size(350, 80),
                       backgroundColor: const Color(0xFF3A80C1),
-                      side: BorderSide(color: Colors.black, width: 1),
+                      side: BorderSide(color: Colors.black, width: 1.5),
                     ),
                     child: const Text(
                       "SIGNUP",
