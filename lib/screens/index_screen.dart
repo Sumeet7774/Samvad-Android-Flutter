@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:samvad/custom/custom_elevated_button.dart';
+
 class IndexScreen extends StatefulWidget {
   const IndexScreen({super.key});
 
@@ -23,44 +25,18 @@ class _IndexScreenState extends State<IndexScreen> {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  ElevatedButton(
+                  CustomElevatedButton(
+                    text: "LOGIN",
                     onPressed: () {
                       // Navigate to Login Screen
                     },
-                    style: ElevatedButton.styleFrom(
-                      minimumSize: const Size(350, 80),
-                      backgroundColor: const Color(0xFF3A80C1),
-                      side: BorderSide(color: Colors.black, width: 1.5),
-                    ),
-                    child: const Text(
-                      "LOGIN",
-                      style: TextStyle(
-                        fontFamily: "Poppins",
-                        fontSize: 35,
-                        fontWeight: FontWeight.w500,
-                        color: Colors.white,
-                      ),
-                    ),
                   ),
                   const SizedBox(height: 20),
-                  ElevatedButton(
+                  CustomElevatedButton(
+                    text: "SIGNUP",
                     onPressed: () {
                       // Navigate to Signup Screen
                     },
-                    style: ElevatedButton.styleFrom(
-                      minimumSize: const Size(350, 80),
-                      backgroundColor: const Color(0xFF3A80C1),
-                      side: BorderSide(color: Colors.black, width: 1.5),
-                    ),
-                    child: const Text(
-                      "SIGNUP",
-                      style: TextStyle(
-                        fontFamily: "Poppins",
-                        fontSize: 35,
-                        fontWeight: FontWeight.w500,
-                        color: Colors.white,
-                      ),
-                    ),
                   ),
                 ],
               ),
