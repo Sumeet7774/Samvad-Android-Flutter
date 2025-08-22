@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:samvad/custom/custom_elevated_button.dart';
+// import 'package:samvad/custom/custom_motion_toast_message.dart';
 
 class IndexScreen extends StatefulWidget {
   const IndexScreen({super.key});
@@ -15,27 +16,32 @@ class _IndexScreenState extends State<IndexScreen> {
     return Scaffold(
       body: Stack(
         children: [
+          /// Background Image
           Positioned.fill(
             child: Image.asset("assets/samvad_splash.png", fit: BoxFit.cover),
           ),
+
+          /// Buttons
           Align(
             alignment: Alignment.bottomCenter,
             child: Padding(
-              padding: const EdgeInsets.only(bottom: 50),
+              padding: EdgeInsets.only(
+                bottom: 50.h,
+              ), 
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   CustomElevatedButton(
                     text: "LOGIN",
                     onPressed: () {
-                      // Navigate to Login Screen
+                      // TODO: Navigate to Login Screen
                     },
                   ),
-                  const SizedBox(height: 20),
+                  SizedBox(height: 20.h), // responsive spacing
                   CustomElevatedButton(
                     text: "SIGNUP",
                     onPressed: () {
-                      // Navigate to Signup Screen
+                      // TODO: Navigate to Signup Screen
                     },
                   ),
                 ],
