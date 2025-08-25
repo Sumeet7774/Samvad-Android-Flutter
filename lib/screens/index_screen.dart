@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:samvad/custom/custom_elevated_button.dart';
-// import 'package:samvad/custom/custom_motion_toast_message.dart';
+import 'package:samvad/screens/signup/signup_page.dart';
+import 'package:samvad/animation/slide_transaition_route.dart';
 
 class IndexScreen extends StatefulWidget {
   const IndexScreen({super.key});
@@ -11,38 +12,40 @@ class IndexScreen extends StatefulWidget {
 }
 
 class _IndexScreenState extends State<IndexScreen> {
+  void _handleLogin() {
+    Navigator.push(
+      context,
+      SlideTransitionRoute(
+        page: const Placeholder(), // TODO: replace with your LoginPage
+      ),
+    );
+  }
+
+  void _handleSignup() {
+    Navigator.push(context, SlideTransitionRoute(page: const SignUpPage()));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
         children: [
-          /// Background Image
           Positioned.fill(
             child: Image.asset("assets/samvad_splash.png", fit: BoxFit.cover),
           ),
 
-          /// Buttons
           Align(
             alignment: Alignment.bottomCenter,
             child: Padding(
-              padding: EdgeInsets.only(
-                bottom: 50.h,
-              ), 
+              padding: EdgeInsets.only(bottom: 50.h),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  CustomElevatedButton(
-                    text: "LOGIN",
-                    onPressed: () {
-                      // TODO: Navigate to Login Screen
-                    },
-                  ),
-                  SizedBox(height: 20.h), // responsive spacing
+                  CustomElevatedButton(text: "LOGIN", onPressed: _handleLogin),
+                  SizedBox(height: 20.h),
                   CustomElevatedButton(
                     text: "SIGNUP",
-                    onPressed: () {
-                      // TODO: Navigate to Signup Screen
-                    },
+                    onPressed: _handleSignup,
                   ),
                 ],
               ),
