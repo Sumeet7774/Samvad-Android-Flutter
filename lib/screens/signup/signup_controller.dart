@@ -43,13 +43,10 @@ class SignupController {
         if (user != null) {
           CustomToast.successToast(
             context,
-            "Signup Successful! Welcome ${user.email_id}.",
+            "Signup Successful! Welcome ${user.email_id}. Click OK to redirect.",
           );
 
-          CustomToast.infoToast(
-            context,
-            "Click OK to redirect to index page for login.",
-          );
+          await Future.delayed(const Duration(milliseconds: 300));
 
           showDialog(
             context: context,
