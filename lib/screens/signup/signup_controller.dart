@@ -26,7 +26,6 @@ class SignupController {
       );
     } else {
       try {
-        // ✅ Show loading spinner before Firebase call
         showDialog(
           context: context,
           barrierDismissible: false,
@@ -34,13 +33,11 @@ class SignupController {
               const Center(child: CircularProgressIndicator()),
         );
 
-        // ✅ Do Firebase signup
         final user = await _signupService.registerUser(
           email: email,
           password: password,
         );
 
-        // ✅ Close the loading spinner once signup is done
         Navigator.pop(context);
 
         if (user != null) {
@@ -59,7 +56,7 @@ class SignupController {
             barrierDismissible: false,
             builder: (context) => CustomSuccessDialog(
               onOkPressed: () {
-                Navigator.pop(context); // close dialog
+                Navigator.pop(context);
                 Navigator.of(context).pushAndRemoveUntil(
                   MaterialPageRoute(builder: (context) => const IndexScreen()),
                   (route) => false,
@@ -69,7 +66,6 @@ class SignupController {
           );
         }
       } catch (e) {
-        // ✅ Close spinner in case of error
         Navigator.pop(context);
         CustomToast.errorToast(context, e.toString());
       }
