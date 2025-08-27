@@ -24,7 +24,7 @@ class SignUpHeader extends StatelessWidget {
             },
           ),
         ),
-        SizedBox(height: 10.h),
+        SizedBox(height: 50.h),
         Text(
           "Samvad",
           style: TextStyle(
@@ -34,6 +34,7 @@ class SignUpHeader extends StatelessWidget {
             color: Colors.white,
           ),
         ),
+        SizedBox(height: 10.h),
       ],
     );
   }

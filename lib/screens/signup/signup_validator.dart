@@ -1,8 +1,8 @@
 class SignUpValidator {
-  static bool isValidUsername(String username) {
-    final regex = RegExp(r'^[a-zA-Z]+$');
-    return regex.hasMatch(username);
-  }
+  // static bool isValidUsername(String username) {
+  //   final regex = RegExp(r'^[a-zA-Z]+$');
+  //   return regex.hasMatch(username);
+  // }
 
   static bool isValidEmail(String email) {
     final regex = RegExp(r'^[a-z][a-z0-9]*@gmail\.com$');

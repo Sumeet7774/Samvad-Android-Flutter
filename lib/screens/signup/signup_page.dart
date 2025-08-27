@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:image_picker/image_picker.dart';
 import 'package:samvad/screens/signup/signup_header.dart';
-import 'package:samvad/screens/signup/signup_profile_picker.dart';
 import 'package:samvad/screens/signup/signup_form.dart';
 
 class SignUpPage extends StatefulWidget {
@@ -13,8 +11,6 @@ class SignUpPage extends StatefulWidget {
 }
 
 class _SignUpPageState extends State<SignUpPage> {
-  XFile? _selectedPhoto;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,18 +24,7 @@ class _SignUpPageState extends State<SignUpPage> {
             children: [
               const SignUpHeader(),
               SizedBox(height: 40.h),
-
-              SignUpProfilePicker(
-                onPhotoSelected: (photo) {
-                  setState(() {
-                    _selectedPhoto = photo;
-                  });
-                },
-              ),
-
-              SizedBox(height: 30.h),
-
-              SignUpForm(selectedPhoto: _selectedPhoto),
+              const SignUpForm(),
             ],
           ),
         ),
