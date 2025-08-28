@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:samvad/custom/custom_button.dart';
 
-class CustomSuccessDialog extends StatelessWidget {
+class CustomSuccessRegistrationDialog extends StatelessWidget {
   final VoidCallback onOkPressed;
 
-  const CustomSuccessDialog({super.key, required this.onOkPressed});
+  const CustomSuccessRegistrationDialog({super.key, required this.onOkPressed});
 
   @override
   Widget build(BuildContext context) {

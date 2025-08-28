@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:samvad/custom/custom_textfield.dart';
 import 'package:samvad/custom/custom_button.dart';
-import 'package:samvad/custom/custom_motion_toast_message.dart';
 import 'package:samvad/utils/lowercase_text_formatter.dart';
-import 'package:samvad/screens/login/login_validator.dart';
+import 'package:samvad/screens/login/login_controller.dart';
 
 class LoginForm extends StatefulWidget {
   const LoginForm({super.key});
@@ -18,31 +17,7 @@ class _LoginFormState extends State<LoginForm> {
   final _passwordController = TextEditingController();
   bool _obscurePassword = true;
 
-  void _validateAndLogin() {
-    String emailid = _emailidController.text.trim();
-    String password = _passwordController.text.trim();
-
-    if (emailid.isEmpty || password.isEmpty) 
-    {
-      CustomToast.errorToast(context, "Please provide all credentials.");
-    } 
-    else if (emailid.contains(" ") || password.contains(" ")) 
-    {
-      CustomToast.errorToast(context, "Spaces are not allowed.");
-    } 
-    else if (!LoginValidator.isValidEmail(emailid)) 
-    {
-      CustomToast.errorToast(context, "Please enter a valid email address.");
-    } 
-    else if (!LoginValidator.isValidPassword(password)) 
-    {
-      CustomToast.errorToast(context,"Password must be 8 chars with A-Z, 0-9 and symbols.",);
-    } 
-    else 
-    {
-      CustomToast.successToast(context,"Validation Passed! Ready for Firebase Login.",);
-    }
-  }
+  final LoginController _controller = LoginController();
 
   @override
   Widget build(BuildContext context) {
@@ -69,7 +44,16 @@ class _LoginFormState extends State<LoginForm> {
           ),
         ),
         SizedBox(height: 50.h),
-        CustomButton(text: "Login", onPressed: _validateAndLogin),
+        CustomButton(
+          text: "Login",
+          onPressed: () {
+            _controller.validateAndLogin(
+              context: context,
+              email: _emailidController.text.trim(),
+              password: _passwordController.text.trim(),
+            );
+          },
+        ),
       ],
     );
   }
