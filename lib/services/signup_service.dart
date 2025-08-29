@@ -27,9 +27,15 @@ class SignupService {
 
       return user;
     } on FirebaseAuthException catch (e) {
-      throw Exception(e.message);
-    } catch (e) {
-      throw Exception("Signup failed: $e");
+      if (e.code == "email-already-in-use") {
+        throw Exception(
+          "This email ID is already registered. Please try logging in.",
+        );
+      } else if (e.code == "invalid-email") {
+        throw Exception("Invalid email address. Please enter a valid email.");
+      } else {
+        throw Exception(e.message ?? "Signup failed. Please try again.");
+      }
     }
   }
 }
