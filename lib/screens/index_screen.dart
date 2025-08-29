@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:samvad/custom/custom_elevated_button.dart';
 import 'package:samvad/screens/login/login_page.dart';
 import 'package:samvad/screens/signup/signup_page.dart';
-import 'package:samvad/animation/slide_transaition_route.dart';
+import 'package:samvad/animation/slide_transition_route.dart';
 
 class IndexScreen extends StatefulWidget {
   const IndexScreen({super.key});

@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:samvad/animation/slide_transaition_route.dart';
+import 'package:samvad/animation/slide_transition_route.dart';
 import 'package:samvad/screens/index_screen.dart';
-import 'package:samvad/screens/home/home_screen.dart';
+import 'package:samvad/screens/fragments/home/home_screen.dart';
 import 'package:samvad/utils/session_manager.dart'; // <-- make sure to import SessionManager
 
 class SplashScreen extends StatefulWidget {
