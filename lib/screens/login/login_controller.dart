@@ -3,7 +3,7 @@ import 'package:samvad/custom/custom_motion_toast_message.dart';
 import 'package:samvad/screens/login/login_validator.dart';
 import 'package:samvad/services/login_service.dart';
 import 'package:samvad/custom/custom_success_login_dialog.dart';
-import 'package:samvad/screens/home_screen.dart';
+import 'package:samvad/screens/home/home_screen.dart';
 import 'package:samvad/utils/session_manager.dart';
 import 'package:samvad/animation/slide_transaition_route.dart';
 
@@ -49,7 +49,7 @@ class LoginController {
 
           CustomToast.successToast(
             context,
-            "Login Successful! Welcome back ${user.email_id}.",
+            "Login Successful! Welcome ${user.email_id}.",
           );
 
           await Future.delayed(const Duration(milliseconds: 300));

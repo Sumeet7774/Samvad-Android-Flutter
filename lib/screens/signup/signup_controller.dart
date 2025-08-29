@@ -43,7 +43,7 @@ class SignupController {
         if (user != null) {
           CustomToast.successToast(
             context,
-            "Signup Successful! Welcome ${user.email_id}. Click OK to redirect.",
+            "Signup Successful! Click OK to redirect.",
           );
 
           await Future.delayed(const Duration(milliseconds: 300));

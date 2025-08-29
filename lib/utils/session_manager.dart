@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:samvad/screens/home_screen.dart';
+import 'package:samvad/screens/home/home_screen.dart';
 import 'package:samvad/screens/index_screen.dart';
 
 class SessionManager {
