@@ -54,9 +54,12 @@ class _HomeScreenState extends State<HomeScreen> {
         child: _pages[_currentIndex], // widget keyed below
         switchInCurve: Curves.easeInOut,
       ),
-      bottomNavigationBar: CustomBottomNavigation(
-        currentIndex: _currentIndex,
-        onTap: (index) => setState(() => _currentIndex = index),
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.only(bottom: 30.0), // ✅ space at the bottom
+        child: CustomBottomNavigation(
+          currentIndex: _currentIndex,
+          onTap: (index) => setState(() => _currentIndex = index),
+        ),
       ),
     );
   }
